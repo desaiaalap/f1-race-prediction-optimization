@@ -36,6 +36,24 @@ This is an end-to-end machine learning and simulation project that predicts Form
 
 ## 📦 Folder Structure
 
+f1-race-prediction-optimization/
+├── data/               # Raw and processed data
+│   ├── raw/
+│   └── processed/
+├── notebooks/          # Jupyter notebooks for EDA and modeling
+├── src/                # Python scripts
+│   ├── ingestion/      # Data ingestion from OpenF1 API
+│   ├── preprocessing/  # Cleaning, feature engineering
+│   ├── modeling/       # ML & RL models
+│   └── simulation/     # Strategy optimization logic
+├── dashboards/         # Streamlit or Dash apps
+├── logs/               # Local logs or outputs
+├── tests/              # Test scripts
+├── README.md
+├── requirements.txt
+└── .gitignore
+
+---
 
 ## 📅 Project Timeline (Mar 23 – Apr 30)
 
@@ -65,11 +83,16 @@ python src/ingestion/openf1_lap_data.py
 # Step 4: Launch dashboard (once built)
 streamlit run dashboards/app.py
 ```
+---
+
 ## 📚 References
 
 - OpenF1 API: https://www.openf1.org/
 - MLflow (Local): https://mlflow.org/
 - Streamlit: https://streamlit.io/
+
+---
+
 ## 👤 Author
 
 **Aalap Desai**  
@@ -77,6 +100,7 @@ Aspiring F1 Race Strategist | Motorsport Data Analyst
 Portfolio Website: https://aalapdesai6.wixsite.com/the-curious-coder  
 LinkedIn: https://www.linkedin.com/in/aalapdesai/
 
+---
 
 ## ⭐️ Interested in Motorsport Data Science?
 If you’re passionate about data and racing, feel free to connect or collaborate on similar projects!
