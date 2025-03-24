@@ -37,8 +37,6 @@ This is an end-to-end machine learning and simulation project that predicts Form
 ## 📦 Folder Structure
 
 
----
-
 ## 📅 Project Timeline (Mar 23 – Apr 30)
 
 | Week | Milestone |
@@ -66,3 +64,20 @@ python src/ingestion/openf1_lap_data.py
 
 # Step 4: Launch dashboard (once built)
 streamlit run dashboards/app.py
+
+## 📚 References
+
+- OpenF1 API: https://www.openf1.org/
+- MLflow (Local): https://mlflow.org/
+- Streamlit: https://streamlit.io/
+## 👤 Author
+
+**Aalap Desai**  
+Aspiring F1 Race Strategist | Motorsport Data Analyst  
+Portfolio Website: https://aalapdesai6.wixsite.com/the-curious-coder  
+LinkedIn: https://www.linkedin.com/in/aalapdesai/  
+Twitter: https://twitter.com/desaiaalap
+
+
+## ⭐️ Interested in Motorsport Data Science?
+If you’re passionate about data and racing, feel free to connect or collaborate on similar projects!
