@@ -36,3 +36,33 @@ This is an end-to-end machine learning and simulation project that predicts Form
 
 ## 📦 Folder Structure
 
+
+---
+
+## 📅 Project Timeline (Mar 23 – Apr 30)
+
+| Week | Milestone |
+|------|-----------|
+| Week 1 | Planning and Data Collection |
+| Week 2 | Feature Engineering and EDA |
+| Week 3 | ML & RL Model Development |
+| Week 4 | Local Deployment (API + Dashboard) |
+| Week 5 | Real-World Testing & Validation |
+| Week 6 | Final Demo, Blog Post & Documentation |
+
+---
+
+## 🚀 How to Run
+
+```bash
+# Step 1: Clone this repo
+git clone https://github.com/desaiaalap/f1-race-prediction-optimization
+
+# Step 2: Install dependencies
+pip install -r requirements.txt
+
+# Step 3: Run ingestion scripts
+python src/ingestion/openf1_lap_data.py
+
+# Step 4: Launch dashboard (once built)
+streamlit run dashboards/app.py
