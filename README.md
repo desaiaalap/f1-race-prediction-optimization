@@ -35,7 +35,7 @@ This is an end-to-end machine learning and simulation project that predicts Form
 ---
 
 ## 📦 Folder Structure
-
+```
 f1-race-prediction-optimization/
 ├── data/               # Raw and processed data
 │   ├── raw/
@@ -52,6 +52,7 @@ f1-race-prediction-optimization/
 ├── README.md
 ├── requirements.txt
 └── .gitignore
+```
 
 ---
 
