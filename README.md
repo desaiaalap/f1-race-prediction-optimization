@@ -64,7 +64,7 @@ python src/ingestion/openf1_lap_data.py
 
 # Step 4: Launch dashboard (once built)
 streamlit run dashboards/app.py
-
+```
 ## 📚 References
 
 - OpenF1 API: https://www.openf1.org/
