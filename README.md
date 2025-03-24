@@ -75,8 +75,7 @@ streamlit run dashboards/app.py
 **Aalap Desai**  
 Aspiring F1 Race Strategist | Motorsport Data Analyst  
 Portfolio Website: https://aalapdesai6.wixsite.com/the-curious-coder  
-LinkedIn: https://www.linkedin.com/in/aalapdesai/  
-Twitter: https://twitter.com/desaiaalap
+LinkedIn: https://www.linkedin.com/in/aalapdesai/
 
 
 ## ⭐️ Interested in Motorsport Data Science?
