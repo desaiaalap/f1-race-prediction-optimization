@@ -1,107 +1,75 @@
-# 🏎️ Formula 1: Race Outcome Prediction & Strategy Optimization
+# 🏎️ Formula 1: Race Prediction & Strategy Optimization
 
-This is an end-to-end machine learning and simulation project that predicts Formula 1 race outcomes and optimizes pit strategies using real-time telemetry and timing data from the OpenF1 API — built completely using free and local tools.
+This project predicts Formula 1 race outcomes and simulates race strategies using machine learning and reinforcement learning. Built as a personal deep dive into motorsports analytics, the goal was to explore how data impacts decision-making on the track.
 
-## 🎯 Project Goals
+## 📌 What It Does
 
-- **Predict Race Outcomes**: Estimate finishing positions using lap and pit data.
-- **Optimize Race Strategies**: Apply reinforcement learning to determine optimal pit stop windows and tire strategies.
-- **Simulate Race Scenarios**: Deploy an interactive race simulation dashboard to replicate the role of an F1 race strategist.
+- **Race Outcome Prediction**  
+  Trains an XGBoost model on FastF1 telemetry data to predict whether a driver finishes in the top 10.  
+  Uses features like tire compound, lap times, pit stop behavior, stint count, and qualifying position.
 
----
+- **Q-Learning Based Strategy Simulator**  
+  Simulates full-length races lap-by-lap to find optimal pit stop strategies based on tire wear, stint length, and lap pace evolution.
 
-## 🧠 Key Features
+- **Driver Performance Feature Engineering**  
+  Extracts 60+ features: average lap time, tire changes, pit stop counts, lap-wise position tracking, and stint analysis.
 
-| Feature | Description |
-|--------|-------------|
-| 📊 **Race Data Ingestion** | Pulls lap-by-lap, pit stop, and telemetry data from the OpenF1 API. |
-| 🛠️ **Feature Engineering** | Extracts strategy-driven features like tire stint performance, pit deltas, and lap consistency. |
-| 🤖 **Machine Learning Models** | Uses classification and regression models to predict positions and win probabilities. |
-| 🎮 **Strategy Simulator** | Reinforcement learning agent chooses pit strategies based on current race states. |
-| 💻 **Local Deployment** | Fully local simulation via Streamlit or FastAPI + Uvicorn — no paid cloud platforms required. |
-| 📈 **Experiment Tracking** | MLflow used locally to track model runs and strategy experiments. |
+- **Testable and Modular**  
+  Includes scripts for ingestion (`FastF1`), feature building, model training, prediction on unseen data, and race strategy simulation.
 
 ---
 
-## 🧰 Tech Stack
+## 🧠 Tech Stack
 
-- **Languages**: Python 3.8+
-- **Data & ML Tools**: OpenF1 API, Pandas, NumPy, Scikit-learn, TensorFlow, MLflow (local)
-- **Visualization**: Matplotlib, Seaborn
-- **Dashboard**: Streamlit or Dash (local)
-- **Deployment**: FastAPI (local with Uvicorn)
-- **Logging**: Built-in Python logging, CSV-based logs (no external services)
+- Python, Pandas, NumPy
+- FastF1 (telemetry ingestion)
+- XGBoost (binary classification)
+- TensorFlow (used in early experiments)
+- Q-Learning (custom reinforcement learning simulation)
 
 ---
 
-## 📦 Folder Structure
+## 🔍 Folder Structure
+
 ```
 f1-race-prediction-optimization/
-├── data/               # Raw and processed data
-│   ├── raw/
-│   └── processed/
-├── notebooks/          # Jupyter notebooks for EDA and modeling
-├── src/                # Python scripts
-│   ├── ingestion/      # Data ingestion from OpenF1 API
-│   ├── preprocessing/  # Cleaning, feature engineering
-│   ├── modeling/       # ML & RL models
-│   └── simulation/     # Strategy optimization logic
-├── dashboards/         # Streamlit or Dash apps
-├── logs/               # Local logs or outputs
-├── tests/              # Test scripts
-├── README.md
-├── requirements.txt
-└── .gitignore
+├── data/
+│ ├── raw/ # Race CSVs (laps, weather, qualifying)
+│ └── cache/ # FastF1 cache
+├── src/
+│ ├── ingestion/ # Fetching race data
+│ ├── preprocessing/ # Feature engineering
+│ ├── modeling/ # Model training + prediction
+│ └── simulation/ # Q-learning race strategy simulator
+├── main.py # End-to-end pipeline
+├── test.py # Predict on new race (2024)
+├── dashboards/ (optional) # Future: visualizations
+└── README.md
 ```
 
----
-
-## 📅 Project Timeline (Mar 23 – Apr 30)
-
-| Week | Milestone |
-|------|-----------|
-| Week 1 | Planning and Data Collection |
-| Week 2 | Feature Engineering and EDA |
-| Week 3 | ML & RL Model Development |
-| Week 4 | Local Deployment (API + Dashboard) |
-| Week 5 | Real-World Testing & Validation |
-| Week 6 | Final Demo, Blog Post & Documentation |
 
 ---
 
-## 🚀 How to Run
+## ✅ Current Capabilities
 
-```bash
-# Step 1: Clone this repo
-git clone https://github.com/desaiaalap/f1-race-prediction-optimization
-
-# Step 2: Install dependencies
-pip install -r requirements.txt
-
-# Step 3: Run ingestion scripts
-python src/ingestion/openf1_lap_data.py
-
-# Step 4: Launch dashboard (once built)
-streamlit run dashboards/app.py
-```
----
-
-## 📚 References
-
-- OpenF1 API: https://www.openf1.org/
-- MLflow (Local): https://mlflow.org/
-- Streamlit: https://streamlit.io/
+- Predicts top-10 finishers for Bahrain GP 2024 using 2018–2023 race data
+- Simulates race strategies for a selected driver using Q-learning
+- Modular codebase for easy extension to other GPs or seasons
 
 ---
 
-## 👤 Author
+## 🚧 Future Improvements
 
-**Aalap Desai**  
-Aspiring F1 Race Strategist | Motorsport Data Analyst  
-Portfolio Website: https://aalapdesai6.wixsite.com/the-curious-coder  
-LinkedIn: https://www.linkedin.com/in/aalapdesai/
+- Add precision/recall/F1 metrics for better model evaluation
+- Plot race strategy heatmaps and telemetry trendlines
+- Expand to other circuits and multi-driver strategy optimization
 
 ---
 
-## ⭐️ Interested in Motorsport Data Science?
-If you’re passionate about data and racing, feel free to connect or collaborate on similar projects!
+## 📬 Contact
+
+Built by [Aalap Desai](https://github.com/desaiaalap) as part of a motorsports data science portfolio.  
+Feel free to explore or fork the repo.
+
+---
+
