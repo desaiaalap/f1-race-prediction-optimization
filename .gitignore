@@ -1,2 +1,20 @@
 *.ff1pkl
 *.csv
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# Model files
+*.pkl
+
+# IDE
+.vscode/
+.idea/
