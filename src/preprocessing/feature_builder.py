@@ -57,17 +57,9 @@ def build_driver_features(laps_df: pd.DataFrame, qualifying_df: pd.DataFrame) ->
     total_laps.rename(columns={'LapNumber': 'total_laps'}, inplace=True)
     summary = summary.merge(total_laps, on=['year', 'DriverNumber'], how='left')
 
-    # 3. Average finishing position from previous races
-    driver_avg_position = laps_df.groupby('DriverNumber')['FinalPosition'].mean().reset_index()
-    driver_avg_position.rename(columns={'FinalPosition': 'avg_finish_position'}, inplace=True)
-    summary = summary.merge(driver_avg_position, on='DriverNumber', how='left')
-
     # Merge qualifying grid position
     qualifying_df['DriverNumber'] = qualifying_df['DriverNumber'].astype(str)
     summary['DriverNumber'] = summary['DriverNumber'].astype(str)
     summary = summary.merge(qualifying_df, on=['year', 'DriverNumber'], how='left')
-
-    # 4. Lap time differences within a stint (to capture tire wear)
-    laps_df['lap_time_diff'] = laps_df.groupby(['year', 'DriverNumber', 'Stint'])['lap_time_sec'].diff().fillna(0)
 
     return summary
